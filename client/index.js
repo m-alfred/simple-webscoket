@@ -1,4 +1,4 @@
-let ws = new WebSocket('ws://localhost:3000');
+let ws = new WebSocket('ws://www.miaokefu.cn');
 
 ws.onopen = () => {
   console.log('open connection');
@@ -6,9 +6,13 @@ ws.onopen = () => {
 
 ws.onmessage = (evt) => {
   console.log(evt.data);
+  const p = document.createElement('p');
+  p.innerHTML = evt.data;
+  document.body.appendChild(p)
 }
 
 ws.onclose = () => {
   console.log('close connection');
   
 }
+
